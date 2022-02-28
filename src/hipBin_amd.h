@@ -1075,16 +1075,6 @@ void HipBinAmd::executeHipCCCmd(vector<string> argv) {
     HIPLDFLAGS += " -O3";
   }
 
-  if (!funcSupp && optArg != "-O0" && hasHIP) {
-    HIPCXXFLAGS +=
-    " -mllvm -amdgpu-early-inline-all=true -mllvm -amdgpu-function-calls=false";
-    if (needLDFLAGS && !needCXXFLAGS) {
-      HIPLDFLAGS +=
-      " -mllvm -amdgpu-early-inline-all=true"
-      " -mllvm -amdgpu-function-calls=false";
-    }
-  }
-
   if (hasHIP) {
     fs::path bitcodeFs = roccmPath;
     bitcodeFs /= "amdgcn/bitcode";
