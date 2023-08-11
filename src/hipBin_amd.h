@@ -493,7 +493,7 @@ void HipBinAmd::executeHipCCCmd(vector<string> argv) {
   bool runCmd = 1;
   bool buildDeps = 0;
   string hsacoVersion;
-  bool funcSupp = 0;      // enable function support
+  bool funcSupp = true;      // enable function support
   bool rdc = 0;           // whether -fgpu-rdc is on
 
   string prevArg;  //  previous argument
